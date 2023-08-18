@@ -1,19 +1,29 @@
 # conversations-python
 Python version of my conversations library.
 
-## Requirements
+## Usage
+
+### Install 
+
+```bash
+pip install git+ssh://git@github.com/Kai-Karren/conversations-python.git
+```
+
+## Install from Source
+
+### Requirements
 
 ```bash
 pip install build
 ```
 
-## Build
+### Build
 
 ```bash
 python -m build
 ```
 
-## Install
+### Install
 
 ```bash
 pip install dist/conversations-0.0.1-py3-none-any.whl

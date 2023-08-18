@@ -1,14 +1,16 @@
 import uuid
 from dataclasses import dataclass, field
+from dataclasses_json import dataclass_json
 from typing import List
 
-
+@dataclass_json
 @dataclass
 class Intent:
     name: str 
     confidence: float
     classifier: str
 
+@dataclass_json
 @dataclass
 class Entity:
     entity: str 
@@ -16,17 +18,20 @@ class Entity:
     confidence: float
     extractor: str
 
+@dataclass_json
 @dataclass
 class Label:
     name: str
     confidence: float
     assigned_by: str
 
+@dataclass_json
 @dataclass
 class Slot:
     name: str
     value: str
 
+@dataclass_json
 @dataclass
 class Message:
     id: str = str(uuid.uuid4())
@@ -39,6 +44,7 @@ class Message:
     slots: List[Slot] = field(default_factory=list)
     labels: List[Label] = field(default_factory=list)
 
+@dataclass_json
 @dataclass
 class Conversation:
     id: str = str(uuid.uuid4())
