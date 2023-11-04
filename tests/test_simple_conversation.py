@@ -1,20 +1,20 @@
-from conversations import conversations
+from conversations import Intent, Message, Conversation
 
 
 def test_create_simple_conversation():
 
-    greeting = conversations.Intent(name="greeting", confidence=0.9, classifier="rasa")
+    greeting = Intent(name="greeting", confidence=0.9, classifier="rasa")
 
-    conversation = conversations.Conversation(
+    conversation = Conversation(
         participants=["user", "bot"],
         messages=[
-            conversations.Message(
+            Message(
                 participant="user",
                 text="Hello",
                 intents=[greeting],
                 intent_ranking=[greeting],
             ),
-            conversations.Message(
+            Message(
                 participant="bot",
                 text="Hi there!",
                 intents=[greeting],

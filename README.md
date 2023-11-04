@@ -26,5 +26,5 @@ python -m build
 ### Install
 
 ```bash
-pip install dist/conversations-0.0.1-py3-none-any.whl
+pip install --force dist/conversations-0.0.3-py3-none-any.whl
 ```
