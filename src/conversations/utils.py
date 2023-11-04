@@ -1,4 +1,4 @@
-from .conversations import Message, Conversation
+from .conversations import Message, Conversation, Intent
 
 class ConversationBuilderForRasaEvents:
 
@@ -26,7 +26,7 @@ class ConversationBuilderForRasaEvents:
                 Message(
                     participant="user",
                     text=event["text"],
-                    intents=[event["parse_data"]["intent"]["name"]],
+                    intents=[Intent(name=event["parse_data"]["intent"]["name"], confidence=event["parse_data"]["intent"]["confidence"], classifier="rasa")],
                     intent_ranking=event["parse_data"]["intent_ranking"],
                     entities=event["parse_data"]["entities"]
                 )

@@ -1,5 +1,5 @@
 from conversations.utils import ConversationBuilderForRasaEvents
-
+from conversations import Intent
 
 def test_create_conversation_builder_for_rasa_events():
 
@@ -18,7 +18,8 @@ def test_add_rasa_event():
         "text": "Hello",
         "parse_data": {
             "intent": {
-                "name": "greeting"
+                "name": "greeting",
+                "confidence": 0.9
             },
             "intent_ranking": [
                 {
@@ -45,7 +46,7 @@ def test_add_rasa_event():
 
     assert message.participant == "user"
     assert message.text == "Hello"
-    assert message.intents == ["greeting"]
+    assert message.intents == [Intent(name="greeting", confidence=0.9, classifier="rasa")]
     assert message.intent_ranking == [
         {
             "name": "greeting",
@@ -65,7 +66,8 @@ def test_add_rasa_events():
             "text": "Hello",
             "parse_data": {
                 "intent": {
-                    "name": "greeting"
+                    "name": "greeting",
+                    "confidence": 0.9
                 },
                 "intent_ranking": [
                     {
@@ -110,7 +112,7 @@ def test_add_rasa_events():
 
     assert message.participant == "user"
     assert message.text == "Hello"
-    assert message.intents == ["greeting"]
+    assert message.intents == [Intent(name="greeting", confidence=0.9, classifier="rasa")]
     assert message.intent_ranking == [
         {
             "name": "greeting",
@@ -138,7 +140,8 @@ def test_get_conversations():
             "text": "Hello",
             "parse_data": {
                 "intent": {
-                    "name": "greeting"
+                    "name": "greeting",
+                    "confidence": 0.9
                 },
                 "intent_ranking": [
                     {
@@ -185,7 +188,7 @@ def test_get_conversations():
 
     assert message.participant == "user"
     assert message.text == "Hello"
-    assert message.intents == ["greeting"]
+    assert message.intents == [Intent(name="greeting", confidence=0.9, classifier="rasa")]
     assert message.intent_ranking == [
         {
             "name": "greeting",
