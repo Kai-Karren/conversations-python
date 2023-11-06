@@ -1,35 +1,35 @@
 import uuid
 from dataclasses import dataclass, field
 from dataclasses_json import dataclass_json
-from typing import List
+from typing import List, Optional
 
 @dataclass_json
 @dataclass
 class Intent:
     name: str 
-    confidence: float
-    classifier: str
+    confidence: float = 1.0
+    classifier: Optional[str] = None
 
 @dataclass_json
 @dataclass
 class Entity:
     entity: str 
     value: str
-    confidence: float
-    extractor: str
+    confidence: float = 1.0
+    extractor: Optional[str] = None
 
 @dataclass_json
 @dataclass
 class Label:
     name: str
-    confidence: float
-    assigned_by: str
+    confidence: float = 1.0
+    assigned_by: Optional[str] = None
 
 @dataclass_json
 @dataclass
 class Slot:
     name: str
-    value: str
+    value: str = ""
 
 @dataclass_json
 @dataclass
