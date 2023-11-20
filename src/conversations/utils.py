@@ -16,7 +16,7 @@ class ConversationBuilderForRasaEvents:
         sender_id = event["sender_id"]
 
         if sender_id not in self.conversations:
-            conversation = Conversation()
+            conversation = Conversation(id=sender_id)
             self.conversations[sender_id] = conversation
 
         conversation = self.conversations[sender_id]
