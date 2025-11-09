@@ -1,1 +1,1 @@
-from .conversations import Intent, Message, Conversation, Slot, Label, Entity
+from .conversations import Intent, Message, Conversation, Slot, Label, Entity, Action
