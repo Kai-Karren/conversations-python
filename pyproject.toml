@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "conversations"
-version = "0.0.6"
+version = "0.0.7"
 authors = [
-  { name="Kai Karren", email="mail@kaikarren.de" },
+  { name="Kai Karren" },
 ]
 description = "Library that allows to create and manage conversations"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<4.0"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -20,3 +20,7 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/Kai-Karren/conversations-python"
 "Bug Tracker" = "https://github.com/Kai-Karren/conversations-python/issues"
+
+[tool.poetry.dependencies]
+dataclasses-json = "^0.6.7"
+pytest = "^9.0.0"

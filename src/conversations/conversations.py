@@ -1,7 +1,7 @@
 import uuid
 from dataclasses import dataclass, field
 from dataclasses_json import dataclass_json
-from typing import List, Optional
+from typing import Any, List, Optional
 
 @dataclass_json
 @dataclass
@@ -33,6 +33,12 @@ class Slot:
 
 @dataclass_json
 @dataclass
+class Action:
+    name: str
+    content: dict[str, Any]
+
+@dataclass_json
+@dataclass
 class Message:
     id: str = str(uuid.uuid4())
     participant: str = ""
@@ -43,6 +49,7 @@ class Message:
     entities: List[Entity] = field(default_factory=list)
     slots: List[Slot] = field(default_factory=list)
     labels: List[Label] = field(default_factory=list)
+    actions: List[Action] = field(default_factory=list)
 
 @dataclass_json
 @dataclass
